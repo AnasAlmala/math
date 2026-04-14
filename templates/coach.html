@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}مدرّب GRE Quant – تدريب{% endblock %}
+
+{% block content %}
+<div class="coach-layout">
+
+  <!-- ── Sidebar: progress ── -->
+  <aside class="sidebar">
+    <h3 class="sidebar-title">تقدّمك</h3>
+
+    <div class="stat-box">
+      <span class="stat-label">الدقة الكلية</span>
+      <span class="stat-value" id="stat-accuracy">—</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">الأسئلة المحلولة</span>
+      <span class="stat-value" id="stat-total">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">مستوى التفكير</span>
+      <span class="stat-value" id="stat-level">—</span>
+    </div>
+
+    <div class="area-bars" id="area-bars"></div>
+  </aside>
+
+  <!-- ── Main: question + feedback ── -->
+  <section class="question-panel">
+
+    <!-- Loading state -->
+    <div id="loading" class="loading-state">
+      <div class="spinner"></div>
+      <p>جاري تحميل السؤال...</p>
+    </div>
+
+    <!-- Question card -->
+    <div id="question-card" class="question-card hidden">
+
+      <div class="q-meta" id="q-meta"></div>
+
+      <!-- Stem -->
+      <p class="q-stem" id="q-stem"></p>
+
+      <!-- QC layout -->
+      <div id="qc-block" class="qc-block hidden">
+        <div class="condition-row" id="qc-condition"></div>
+        <div class="columns-row">
+          <div class="column-box">
+            <div class="col-label">العمود (أ)</div>
+            <div class="col-value" id="col-a"></div>
+          </div>
+          <div class="vs-badge">VS</div>
+          <div class="column-box">
+            <div class="col-label">العمود (ب)</div>
+            <div class="col-value" id="col-b"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Answer section -->
+      <div class="answer-section" id="answer-section"></div>
+
+      <!-- Submit -->
+      <button class="btn-submit" id="btn-submit">تحقّق من الإجابة</button>
+    </div>
+
+    <!-- Feedback card -->
+    <div id="feedback-card" class="feedback-card hidden">
+      <div class="feedback-header" id="feedback-header"></div>
+      <div class="feedback-body" id="feedback-body"></div>
+      <button class="btn-next" id="btn-next">السؤال التالي ←</button>
+    </div>
+
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}

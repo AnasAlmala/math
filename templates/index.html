@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}مدرّب GRE Quant – ابدأ{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <div class="hero-card">
+    <h1 class="hero-title">مدرّب GRE الرياضيات 🎯</h1>
+    <p class="hero-sub">
+      تدريب تكيّفي على أسئلة الكم (Quant) باللغة العربية.<br/>
+      سيحلّل المدرّب أخطاءك ويبني معك مهارة التفكير على مستوى 160+.
+    </p>
+
+    <form action="/start" method="POST" class="start-form">
+      <label for="name" class="form-label">أدخل اسمك للبدء</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-input"
+        placeholder="اسمك هنا..."
+        required
+        autocomplete="off"
+        autofocus
+      />
+      <button type="submit" class="btn-start">ابدأ التدريب ←</button>
+    </form>
+
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">📊</span>
+        <span>تتبّع تقدّمك</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🔁</span>
+        <span>تكيّف مع مستواك</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🧠</span>
+        <span>ملاحظات المدرّب الفورية</span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
